@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "IoT_monitoring"
+version = "0.0.1"
+description = "Monitoring for Iot deveces and save data"
+authors = ["pi3c <pi3c@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+influxdb-client = "^1.39.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
