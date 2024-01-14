@@ -24,7 +24,7 @@ class Device(ABC):
     """
 
     @abstractmethod
-    def _connect_and_read(self) -> Any:
+    def connect_and_read(self) -> Any:
         """Реализуется физическое подключение к прибору, и считывание данных"""
         raise NotImplementedError
 
@@ -59,7 +59,7 @@ class Inverter(Device):
         self.port: str = "COM_port"
         self.__dict__.update(kwargs)
 
-    def _connect_and_read(self) -> str:
+    def connect_and_read(self) -> str:
         """Подключение к прибору
         Реализует подключение к прибору и считывает поток данных
         в виде строки.
