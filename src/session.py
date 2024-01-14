@@ -20,9 +20,7 @@ class InfDBSession:
         self.__write_api = self.__client.write_api(write_options=SYNCHRONOUS)
 
     def add(self, point: dict) -> None:
-        print(point)
         self.__points_queue.append(Point.from_dict(point))
-        print(len(self.__points_queue))
 
     def commit(self) -> None:
         while self.__points_queue:

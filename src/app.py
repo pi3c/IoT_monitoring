@@ -1,9 +1,10 @@
+from src.config import test_config
 from src.device import FakeInverter
 from src.monitor import Monitor
 
 
-def run_test_monitor(config: dict):
-    monitor = Monitor(session_config=config)
+def demo_test():
+    monitor = Monitor(session_config=test_config)
     device_conf = {
         "name": "myinv",
         "model": "12345",
@@ -12,8 +13,4 @@ def run_test_monitor(config: dict):
     }
     device = FakeInverter(**device_conf)
     monitor.init_device(device)
-    monitor.demo_get_device_data_from_file()
-
-
-if __name__ == "__main__":
-    pass
+    monitor.mainloop()
